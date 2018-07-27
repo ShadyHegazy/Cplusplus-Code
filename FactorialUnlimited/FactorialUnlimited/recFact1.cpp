@@ -1,8 +1,13 @@
 #include <iostream>
 #include <vector>
-#include<string>
+
 std::string multiplyBig(std::string largeNum, int smallNum)
 {
+//This function does what its name says. It is simply able to do large multiplication processes. 
+// It takes an unlimited large number as a string, and a small number as an integer.
+	
+//smallNum needs to be further extended to be unlimited
+//The current situation is that: the function return and the input largeNum are unlimited. But, the smallNum is limited by int digit representation limits.
 	std::vector<std::string> multSheet;
 	multSheet.assign(smallNum, largeNum);
 	//strLargeNum=std::to_string(largeNum);
@@ -48,6 +53,8 @@ std::string multiplyBig(std::string largeNum, int smallNum)
 
 unsigned long long factorialRecursive(int y)
 {
+// Simple recursive implementation of a factorial caclulator. 
+// The only drawback is that it is limited by c++ int type representation limits.
     if (y>1)
     {
         return y*factorialRecursive(y-1);
@@ -65,6 +72,7 @@ unsigned long long factorialRecursive(int y)
 
 int main()
 {
+//uses the above two functions to calculate factorial with no limit on digit representation.
     int initNum;
     std::cout << "Enter the number that you want to calculate its factorial ...";
     std::cin >> initNum;
